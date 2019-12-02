@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block speech_reco %}
+{% load staticfiles %}
+
+<div>
+  <form method="post">
+    <!-- Set the CSRF token in the template -->
+    {% csrf_token %}
+  </form>
+</div>
+<div class="w3-container" style="text-align: center; height: 100%;">
+  
+
+
+  <br><br><br>
+  <div class="w3-cell-row">
+    <div class="w3-cell w3-container">
+      <h3>Order now!</h3>
+      <p>You will be redirected to check and submit your order.</p>
+    </div>
+  </div>
+  <br><br><br>
+  <div class="w3-cell-row">
+    <div class="w3-cell ">
+      <button id="start_button" style="border-style: none;" class="w3-circle w3-sand" onclick="startButton(event)">
+        <img id="start_img" src="{% static 'img/mic.gif' %}">
+      </button>
+    </div>    
+  </div>
+  <div>
+  <hr>
+  <span id="final_span"></span>
+  <span id="interim_span"></span>
+  <p>
+</div>   
+  <br><br><br>
+
+</div>
+
+<script type="text/javascript" src="{% static 'js/speech_to_text.js' %}"></script>
+{% endblock %} 
